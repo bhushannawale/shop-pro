@@ -1,0 +1,20 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<div class="soc">
+    <h3> <center> Medicines List </center> </h3>
+</div>
+
+<br>
+  <div class="card" style="margin-left:33%; width:33%;">
+  
+    {% for item in items %}
+      <form class="form-group" method="POST">   {% csrf_token %}
+        Product : <input type="text" class="form-control" value="{{item.medicine.Name}}" readonly>
+        Price : <input type="text" class="form-control" value="{{item.medicine.MRP}}" readonly>
+        Quantity : <input type="text" class="form-control" value="{{item.quantity}}" readonly> <br>
+        <a class="form-control btn btn-success" style="max-width:20%; margin-left:40%;" href="{% url 'shop_app:newOrder' pk=item.pk %}"> Confirm Order </a>
+      </form>
+      {% endfor %}
+   </div>
+
+{% endblock %}

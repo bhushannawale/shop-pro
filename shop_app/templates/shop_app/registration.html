@@ -1,0 +1,19 @@
+{% extends 'shop_app/base.html' %}
+
+{% load staticfiles %}
+{% block sample %}
+<br><br><br>
+<div class="jumbotron container">
+{% if Registered %}
+<h1>Thanks for Registering , Hope you'll like our service!</h1>
+{% else %}
+<h1>Register Here Please : </h1>
+<form  method="POST">
+{% csrf_token %}
+{{ profile_form.as_p }}
+{{ user_form.as_p }}
+<input class="btn btn-primary" type="submit" name="" value="Submit">
+</form>
+</div>
+{% endif %}
+{% endblock %}

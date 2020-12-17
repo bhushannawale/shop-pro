@@ -1,0 +1,33 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<div class="wel" >
+  <h1>Medicine Detail Page</h1>
+  <hr id="ee">
+  <h2>Medicine Details  </h2>
+</div>
+
+<div class="clasy jumbotron container">
+
+      <h3>Name : {{stock_detail.Name}}</h3>
+      <hr>
+    <h3>Salt: {{stock_detail.Salt}}</h3>
+    <hr>
+  <h3>Company : {{stock_detail.Company}}</h3>
+  <hr>
+  <h3>MRP : {{stock_detail.MRP}}</h3>
+  <hr>
+  <h3>MFD : {{stock_detail.MFD}}</h3>
+  <hr>
+  <h3>Expiry : {{stock_detail.Expiry}}</h3>
+  <hr>
+
+
+
+ <p><a class ="btn btn-warning " href="{% url 'shop_app:update' pk=stock_detail.pk %}">Update</a>  
+     <a class ="btn btn-danger " href="{% url 'shop_app:delete' pk=stock_detail.pk %}">Delete</a>  
+     <a class ="btn btn-success " href="{% url 'shop_app:addToCart' pk=stock_detail.pk %}"> Add To Cart </a>
+ </p>
+
+</div>
+
+{% endblock %}

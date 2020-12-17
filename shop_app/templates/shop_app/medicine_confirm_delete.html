@@ -1,0 +1,15 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<br><br>
+<div class="jumbotron container mod">
+  <h3>Delete {{medicine.Name}} ?</h3>
+  <hr>
+  <form  method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger"type="submit"  value="Delete">
+    <a href="{% url 'shop_app:StockDetail' pk=medicine.pk %}"> Cancel</a>
+  </form>
+  <hr>
+</div>
+
+{% endblock %}

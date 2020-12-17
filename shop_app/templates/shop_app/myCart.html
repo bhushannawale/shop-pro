@@ -1,0 +1,25 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<div class="soc">
+    <h3> <center> Medicines List </center> </h3>
+</div>
+
+<br>
+      <table class="table table-secondary">
+        <tr class="table-hover table-secondary">
+         <th>Tablet</th>
+         <th>Price</th>
+         <th>Quantity</th>
+       </tr>
+       {% for item in items %}
+       <tr class="table-hover table-secondary">
+         <td>{{item.medicine.Name}}</td>
+         <td>{{item.medicine.MRP}}</td>
+         <td>{{item.quantity}}</td>
+         <td><a class ="btn btn-danger" href="{% url 'shop_app:removeFromCart' pk=item.pk %}"> Delete </a> </td>
+         <td><a class ="btn btn-success" href="{% url 'shop_app:checkout' pk=item.pk %}"> Buy </a> </td>
+       </tr>
+  {% endfor %}
+      </table>
+
+{% endblock %}

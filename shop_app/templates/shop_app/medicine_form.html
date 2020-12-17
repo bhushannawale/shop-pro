@@ -1,0 +1,24 @@
+{% extends 'shop_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block sample %}
+<h1 class="qrt">
+  {% if not form.instance.pk %}
+  Add New Medicine
+  {% else %}
+  Update Medicine
+  {% endif %}
+</h1>
+<div class="jumbotron container">
+  <form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+    
+    <input type="submit" class="btn btn-primary" value="submit">
+  </form>
+</div>
+
+
+
+{% endblock %}
+    

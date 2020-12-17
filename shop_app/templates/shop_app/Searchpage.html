@@ -1,0 +1,21 @@
+{% extends 'shop_app/base.html' %}
+{% block sample %}
+<br><br>
+<h1 class="qrt">Search Results</h1>
+<br><br><br>
+<div class="jumbotron container">
+{% for med in object_list %}
+  <div class="alert alert-dark" role="alert">
+    <p><a class=" bad" href="{{med.id}}">{{med.Name}}</a></p>
+    <p>Salt: {{med.Salt}}</p>
+    <p>MFD: {{med.MFD}}</p>
+    <p>Expiry: {{med.Expiry}}</p>
+  </div>
+ <hr>
+ {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

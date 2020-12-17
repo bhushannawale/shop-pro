@@ -1,0 +1,47 @@
+{% extends 'shop_app/base.html' %}
+
+
+{% block sample %}
+
+<div class="qwe">
+  <h3 >Login Here</h3>
+</div>
+<br><br>
+<div class="jumbotron container">
+<form  action="{% url 'shop_app:userLogin' %}" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    
+    <label for="username">Username :</label>
+    
+    <input class="form-control" type="text" name="username" placeholder="Enter your Username" >
+    <label for="password">Password :</label>
+    <input class="form-control" type="password" name="password" placeholder="Enter your password">
+    <br>
+    <input class='btn btn-outline-primary' type="submit" name="" value="Submit">
+  </div>
+
+</form>
+</div>
+<!-- Footer -->
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+        <a color="#E41F09" class="btn btn-outline-white" href="#" target="_blank" role="button">9860311717 
+            <i class="fas fa-phone"></i>
+        </a>
+        <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">MedicineBook.com
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3" color="white">
+        © 2018 Copyright:
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"> MedicineBook@gmail.com </a>
+    </div>
+    <!--/.Copyright-->
+
+{% endblock %}
